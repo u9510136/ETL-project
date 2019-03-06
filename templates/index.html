@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Climate Change Data</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+    <div class="container text-center">
+        <h1 class='jumbotron'>Climate Change Data</h1>
+    </div>
+    <div class="container text-center">
+        <h4>Average Temperatures (Celsius) in 5 Countries from 1980-1999</h4>
+        <center>
+            <table>
+                {% for row in results1 %}
+                    <tr>
+                    {% set rowloop = loop %}
+                    {% for cell in row %}
+                        <td id="cell-{{ rowloop.index }}-{{ loop.index }}">{{ cell }}</td>
+                    {% endfor %}
+                    </tr>
+                {% endfor %}
+        </table>
+        </center>
+    </div>
+</br>
+    <div class="container text-center">
+        <h4>Average Rainfall (inches) in 5 Countries from 1980-1999</h4>
+        <center>
+            <table>
+                {% for row in results2 %}
+                    <tr>
+                    {% set rowloop = loop %}
+                    {% for cell in row %}
+                        <td id="cell-{{ rowloop.index }}-{{ loop.index }}">{{ cell }}</td>
+                    {% endfor %}
+                    </tr>
+                {% endfor %}
+            </table>
+        </center>
+    </div>
+</br>
+    <div class="container text-center">
+        <h4>Here are the GreenHouse Gas Emissions in 5 Countries from 1980-1999</h4>
+        <center>
+        <table>
+            {% for row in results3 %}
+                <tr>
+                {% set rowloop = loop %}
+                {% for cell in row %}
+                    <td id="cell-{{ rowloop.index }}-{{ loop.index }}">{{ cell }}</td>
+                {% endfor %}
+                </tr>
+            {% endfor %}
+        </table>
+        </center>
+    </div>
+</br>
+    <div class="container text-center">
+        <h4>Here are the populations in 5 Countries from 1980-1999</h4>
+        <center>
+            <table>
+                {% for row in results3 %}
+                    <tr>
+                    {% set rowloop = loop %}
+                    {% for cell in row %}
+                        <td id="cell-{{ rowloop.index }}-{{ loop.index }}">{{ cell }}</td>
+                    {% endfor %}
+                    </tr>
+                {% endfor %}
+            </table>
+        </center>
+    </div>
+</body>
+</html>
